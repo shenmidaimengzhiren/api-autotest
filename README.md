@@ -1,5 +1,7 @@
 # GitHub API 接口自动化测试项目
 
+![CI](https://github.com/shenmidaimengzhiren/api-autotest/actions/workflows/ci.yml/badge.svg)
+
 基于 Python + pytest 的接口自动化测试实践项目，以 GitHub 公开 REST API 为被测对象，
 覆盖正常场景、异常场景与参数化数据驱动，使用分层设计组织代码。
 
@@ -80,6 +82,18 @@ python -m pytest test_param.py -v
 `report.html` 为自包含单文件报告（样式内嵌），可直接用浏览器打开或分享，
 内容包括用例总数、通过/失败统计、每条用例耗时与失败详情。
 
+## 持续集成（CI）
+
+项目通过 GitHub Actions 实现自动化回归：每次推送到 `main` 分支，
+云端自动搭建 Python 环境、安装依赖、执行全部用例并生成测试报告。
+
+- CI 配置：`.github/workflows/ci.yml`
+- 运行记录：仓库的 **Actions** 标签页
+- 测试报告：每次运行结束后可在运行详情页下载 Artifact `test-report`
+
+README 顶部的徽章实时反映最近一次构建状态：
+绿色 passing 表示全部用例通过，红色 failing 表示有用例失败。
+
 ## 已知限制
 
 - 依赖公网访问 GitHub API，未登录状态下有调用频率限制（60 次/小时）
@@ -90,5 +104,5 @@ python -m pytest test_param.py -v
 
 - [ ] 引入 `conftest.py` 中的 session 级 fixture 复用 HTTP 连接
 - [ ] 接入 Allure 报告，支持用例分级与历史趋势
-- [ ] 接入 GitHub Actions，实现提交即触发回归
+- [x] 接入 GitHub Actions，实现提交即触发回归
 - [ ] 补充 token 鉴权场景（Header 传 token，验证限流提升至 5000 次/小时）
