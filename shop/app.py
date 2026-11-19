@@ -54,6 +54,8 @@ def register():
 
     if not username or not password:
         return jsonify({"code": 400, "message": "用户名和密码不能为空"}), 400
+    if len(password) < 6:
+        return jsonify({"code": 400, "message": "密码长度不能少于 6 位"}), 400
     if username in users:
         return jsonify({"code": 409, "message": "用户名已存在"}), 409
 

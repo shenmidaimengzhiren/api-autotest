@@ -59,6 +59,12 @@ class TestRegister:
         assert resp.status_code == 400
         assert "不能为空" in resp.get_json()["message"]
 
+    def test_register_short_password(self, client):
+        """边界：密码只有 1 个字符，观察系统是否拦截弱密码"""
+        resp = register(client, "user_" + secrets.token_hex(4), password="a")
+        print("实际返回:", resp.status_code, resp.get_json())
+        assert resp.status_code == 400, "缺陷！系统没有校验密码长度，1 位密码也能注册"
+
     def test_register_duplicate_username(self, client):
         """反向：重复注册 → 409"""
         username = "user_" + secrets.token_hex(4)
