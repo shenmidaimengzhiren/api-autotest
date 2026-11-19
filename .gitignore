@@ -1,0 +1,20 @@
+# Python 运行时自动生成的缓存，不应进版本库
+__pycache__/
+*.py[cod]
+
+# pytest 的缓存目录
+.pytest_cache/
+
+# 测试报告是"产物"，每次运行都会重新生成，不进版本库
+report.html
+
+# 虚拟环境（以后会用到）
+.venv/
+venv/
+
+# 编辑器/系统临时文件
+.DS_Store
+Thumbs.db
+
+# 工作区内部数据（记忆、会话记录），不属于项目代码
+.workbuddy/

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>软件测试 3 个月学习计划</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f6f7f9; color: #222; line-height: 1.7; padding: 32px 16px; }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+  .sub { color: #666; font-size: 14px; margin-bottom: 28px; }
+  .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; }
+  .card h2 { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
+  .card h2 .tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 1px 8px; border-radius: 10px; margin-right: 8px; vertical-align: 2px; }
+  .t1 { background: #e8f5e9; color: #2e7d32; }
+  .t2 { background: #e3f2fd; color: #1565c0; }
+  .t3 { background: #fff3e0; color: #e65100; }
+  .t4 { background: #fce4ec; color: #c2185b; }
+  .goal { font-size: 13px; color: #888; margin-bottom: 14px; }
+  .card ul { padding-left: 20px; font-size: 14px; }
+  .card li { margin-bottom: 6px; }
+  .card li b { font-weight: 600; }
+  .res { margin-top: 12px; font-size: 13px; background: #fafafa; border-left: 3px solid #ccc; padding: 8px 12px; border-radius: 4px; }
+  .res b { font-weight: 600; }
+  .check { margin-top: 12px; font-size: 13px; color: #444; }
+  .check b { font-weight: 600; color: #2e7d32; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+  th, td { border: 1px solid #e5e7eb; padding: 8px 12px; text-align: left; }
+  th { background: #f9fafb; font-weight: 600; }
+  .note { font-size: 13px; color: #8a6d3b; background: #fdf6e3; border: 1px solid #f0e0b0; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; }
+  h3 { font-size: 15px; font-weight: 600; margin: 14px 0 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>软件测试 3 个月学习计划</h1>
+  <p class="sub">目标：零基础 → 具备初级功能/接口测试工程师的求职能力。按每天 2–3 小时安排，可根据进度 ±1 周弹性调整。</p>
+
+  <div class="note"><b>执行原则：</b>① 跟住一套课程，不要来回换；② 每学一个知识点当天动手操作一遍；③ 每周日晚花 30 分钟回顾本周内容并写学习笔记；④ 卡住超过 1 小时就去 CSDN / TesterHome 搜，不要死磕。</div>
+
+  <div class="card">
+    <h2><span class="tag t1">第 1–3 周</span>阶段一：测试基础理论</h2>
+    <p class="goal">目标：建立测试思维，能独立为一款 App / 网站写完整测试用例</p>
+    <ul>
+      <li><b>第 1 周</b>：软件测试概念、测试流程（需求评审→计划→用例→执行→回归→报告）、黑盒/白盒、测试分级（单元/集成/系统/验收）</li>
+      <li><b>第 2 周</b>：用例设计方法 —— 等价类划分、边界值分析、判定表、场景法（重点，逐个练透）</li>
+      <li><b>第 3 周</b>：Bug 生命周期、缺陷报告写法；安装禅道，练习提交和管理缺陷；为一个真实产品（如微信发红包、12306 购票）完整写一份测试用例</li>
+    </ul>
+    <div class="res"><b>资源：</b>B 站「戴师兄」用例设计实战 + 任一套 2024 年后的零基础入门课；《软件测试的艺术》睡前翻阅</div>
+    <p class="check"><b>✓ 检验：</b>能不看教程，独立写出一份 50+ 条用例的 Excel/XMind 测试用例文档</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="tag t2">第 4–6 周</span>阶段二：SQL + Linux + 接口测试</h2>
+    <p class="goal">目标：掌握初级测试岗的三大硬性门槛技能</p>
+    <ul>
+      <li><b>第 4 周</b>：MySQL —— 增删改查、where/order by/group by、多表连接（join）、常用聚合函数；每天在菜鸟教程在线练习 + 本地装 Navicat 实操</li>
+      <li><b>第 5 周</b>：Linux 基础 —— 文件操作、grep/tail 查日志、ps/top 查进程、vim 基本编辑；装一个虚拟机或用云服务器练</li>
+      <li><b>第 6 周</b>：HTTP 协议基础 + Postman 接口测试（请求方法、状态码、Cookie/Token）；Fiddler 抓包，学会定位问题是前端还是后端</li>
+    </ul>
+    <div class="res"><b>资源：</b>菜鸟教程（SQL/Linux 手册）；B 站「白阁测试」Postman 教程；《SQL 必知必会》</div>
+    <p class="check"><b>✓ 检验：</b>给定一个开放接口（如聚合数据免费 API），能用 Postman 完成接口测试并出报告；能在 Linux 上用 grep 定位日志中的报错</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="tag t3">第 7–9 周</span>阶段三：Python + 自动化入门</h2>
+    <p class="goal">目标：能用 Python 写脚本，跑通一个 Web 自动化测试流程</p>
+    <ul>
+      <li><b>第 7 周</b>：Python 基础 —— 变量、列表/字典、函数、if/for、文件读写、异常处理（只学测试用得到的，不必深入面向对象）</li>
+      <li><b>第 8 周</b>：Pytest 框架 —— 断言、fixture、参数化；用 Requests 库做接口自动化（把第 6 周的接口测试用代码实现）</li>
+      <li><b>第 9 周</b>：Selenium Web 自动化 —— 元素定位八大方式、显式等待、简单 PO 模式；写一个登录+下单流程的自动化脚本</li>
+    </ul>
+    <div class="res"><b>资源：</b>孙兴华 Python 入门（小白）或廖雪峰教程；B 站「测试开发山哥」Selenium 教程；Pytest 官方文档</div>
+    <p class="check"><b>✓ 检验：</b>有一个能跑通的接口自动化小项目（Pytest + Requests）和一个 UI 自动化脚本，代码传到 GitHub</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="tag t4">第 10–12 周</span>阶段四：项目实战 + 求职准备</h2>
+    <p class="goal">目标：形成可写进简历的项目经历，完成面试准备</p>
+    <ul>
+      <li><b>第 10 周</b>：综合实战 —— 找一个开源电商/管理系统项目，完成完整测试：写测试计划与用例、执行功能测试、Postman 接口测试、SQL 造数与数据校验、提 Bug、写测试报告</li>
+      <li><b>第 11 周</b>：性能测试入门 —— JMeter 录制脚本、线程组设置、看 TPS/响应时间/错误率，出一份简单压测报告（面试加分项）</li>
+      <li><b>第 12 周</b>：简历打磨 + 面试 —— 牛客网刷软件测试面试题（用例设计题必练）、看面经、模拟自我介绍和项目描述</li>
+    </ul>
+    <div class="res"><b>资源：</b>GitHub 开源项目（搜 testcases / mall 等带文档的项目）；JMeter 官方文档或 B 站 JMeter 教程；牛客网「软件测试」题库</div>
+    <p class="check"><b>✓ 检验：</b>简历上有 1 个完整测试项目 + 1 个自动化小项目；常见面试题（用例设计、SQL、HTTP、Bug 定位思路）能流畅回答</p>
+  </div>
+
+  <div class="card">
+    <h2>每日时间安排参考（2.5 小时版）</h2>
+    <table>
+      <tr><th>时段</th><th>内容</th><th>时长</th></tr>
+      <tr><td>第 1 段</td><td>看课程视频（倍速），跟做笔记</td><td>60 分钟</td></tr>
+      <tr><td>第 2 段</td><td>动手实操当天知识点</td><td>60 分钟</td></tr>
+      <tr><td>第 3 段</td><td>整理笔记 / 遇到的问题写进文档（碎片时间逛 TesterHome、牛客）</td><td>30 分钟</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>三个月的红线</h2>
+    <ul>
+      <li><b>不要</b>一上来就学自动化 —— 用例设计和接口测试才是初级岗面试的考察重点</li>
+      <li><b>不要</b>囤课囤资料 —— 同一主题跟 1 个博主就够</li>
+      <li><b>不要</b>只看不练 —— 每个知识点必须有对应的实操产出</li>
+      <li><b>一定要</b>把用例、脚本、报告整理到 GitHub —— 这就是没有工作经验时的"项目经历"</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

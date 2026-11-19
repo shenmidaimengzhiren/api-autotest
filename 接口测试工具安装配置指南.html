@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>接口测试工具 下载安装配置指南（Windows）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f6f7f9; color: #222; line-height: 1.75; padding: 32px 16px; }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+  .sub { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 22px 26px; margin-bottom: 18px; }
+  .card h2 { font-size: 17px; font-weight: 600; margin-bottom: 2px; display: flex; align-items: center; gap: 8px; }
+  .num { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: #e8f0fe; color: #1a56c4; font-size: 13px; font-weight: 600; flex: none; }
+  .meta { font-size: 12px; color: #888; margin: 4px 0 14px; }
+  .meta code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 12px; color: #c0392b; }
+  ol { padding-left: 22px; font-size: 14px; }
+  ol li { margin-bottom: 7px; }
+  pre { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 10px 14px; font-size: 13px; font-family: Consolas, Monaco, monospace; margin: 8px 0; overflow-x: auto; color: #333; }
+  .warn { background: #fdf6e3; border-left: 3px solid #e0b252; padding: 10px 14px; border-radius: 4px; font-size: 13px; margin-top: 10px; color: #6b5525; }
+  .tip { background: #eef7ee; border-left: 3px solid #67a86a; padding: 10px 14px; border-radius: 4px; font-size: 13px; margin-top: 10px; color: #33552f; }
+  .top { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px 24px; margin-bottom: 18px; font-size: 13.5px; }
+  .top b { font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { border: 1px solid #e9ecef; padding: 7px 10px; text-align: left; }
+  th { background: #f9fafb; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>接口测试工具：下载安装与配置指南</h1>
+  <p class="sub">Windows 环境 · 全部免费 · 按顺序装即可（前 4 个是主力，第 5-6 个是阶段三用）</p>
+
+  <div class="top">
+    <b>建议安装顺序：</b>Apifox（发请求）→ Fiddler Classic 或 Reqable（抓包）→ Python（写自动化）→ JMeter（性能）。
+    <table>
+      <tr><th>工具</th><th>官网</th><th>安装包大小</th><th>是否需要注册</th></tr>
+      <tr><td>Apifox</td><td>apifox.com</td><td>约 185 MB</td><td>需注册（免费）</td></tr>
+      <tr><td>Fiddler Classic</td><td>telerik.com/download/fiddler</td><td>约 5 MB</td><td>需填邮箱</td></tr>
+      <tr><td>Reqable</td><td>reqable.com/zh-CN/download</td><td>约 90 MB</td><td>不需要</td></tr>
+      <tr><td>Python</td><td>python.org</td><td>约 25 MB</td><td>不需要</td></tr>
+      <tr><td>JMeter</td><td>jmeter.apache.org</td><td>约 90 MB（zip）</td><td>不需要</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">1</span>Apifox（接口调试与测试主力）</h2>
+    <p class="meta">下载：<code>https://apifox.com/download</code> ｜ 选 Windows 64 位 .exe</p>
+    <ol>
+      <li>打开官网 → 点「免费下载」→ 选 Windows → 下载 <b>Apifox-windows-x64.exe</b></li>
+      <li>双击安装（可改安装路径，建议不放 C 盘根目录），一路「下一步」</li>
+      <li>首次打开用手机号或微信扫码注册登录（免费版不限人数、项目数、接口数）</li>
+      <li>点「新建项目」→ 建一个叫「接口测试练习」的项目</li>
+      <li>项目内「新建接口」→ 填一个练习地址测试连通性：<code>https://httpbin.org/get</code>，点「发送」，返回 200 即成功</li>
+      <li>把常用环境配好：右上角「环境管理」→ 新建开发环境，把域名设为变量（如 <code>{{baseUrl}}</code> = https://httpbin.org），后续接口都用变量拼接</li>
+    </ol>
+    <div class="tip">练习断言：在接口的「后置操作」里加断言，比如 <code>json.data.url 包含 httpbin</code>，这就相当于 Postman 的 Tests 脚本。</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">2</span>Fiddler Classic（抓包，Windows 免费）</h2>
+    <p class="meta">下载：<code>https://www.telerik.com/download/fiddler</code> ｜ 仅 Windows，仅个人非商业免费</p>
+    <ol>
+      <li>打开页面 → 下拉找到下载表单 → 国家选 China、填邮箱、勾选「I confirm...」确认非商业用途 → 点 Download</li>
+      <li>下载得到 <b>FiddlerSetup.exe</b>，双击安装，一路下一步</li>
+      <li><b>关键一步</b>：打开 Fiddler → 菜单 <code>Tools → Options → HTTPS</code> → 勾选 <code>Capture HTTPS CONNECTs</code> 和 <code>Decrypt HTTPS traffic</code> → 弹窗选 Yes 安装根证书</li>
+      <li>同一窗口点 <code>Actions → Trust Root Certificate</code>，全部选 Yes（不装证书只能看 https 的域名，看不到内容）</li>
+      <li>打开浏览器随便访问一个网站，左侧会话列表出现请求，点开可看请求头、响应体，即配置成功</li>
+    </ol>
+    <div class="warn"><b>常见坑：</b>① 装完还是显示 tunnel to ... 说明证书没装好，重做第 3-4 步；② 浏览器用 Chrome/Edge 时若开了代理插件（如 SwitchyOmega），需关闭；③ 抓手机包需手机与电脑同 WiFi，手机 WiFi 设置里代理指向电脑 IP + 8888 端口，再用手机浏览器访问 <code>http://电脑IP:8888</code> 下载安装证书。</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">3</span>Reqable（抓包，国产现代界面，可选替代 Fiddler）</h2>
+    <p class="meta">下载：<code>https://reqable.com/zh-CN/download</code> ｜ Windows 7+，免费版够学习用</p>
+    <ol>
+      <li>打开下载页 → Windows x86_64 → 选 <b>exe（安装版，建议）</b> 或 zip（免安装）</li>
+      <li>双击安装，首次打开会有引导，提示安装根证书时点「是 / 信任」（一键完成，比 Fiddler 简单）</li>
+      <li>点左上角「启动」开始抓包，浏览器访问网页即可看到流量</li>
+      <li>想抓手机：点「远程设备」按提示扫码 / 配置代理，App 内会给出完整步骤</li>
+    </ol>
+    <div class="tip">Fiddler 和 Reqable 二选一即可。想跟教程就装 Fiddler（教程多），想要省心的中文界面就装 Reqable。</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">4</span>Python（自动化基础，阶段三用）</h2>
+    <p class="meta">下载：<code>https://www.python.org/downloads/</code> ｜ 国内慢可用华为镜像 <code>https://mirrors.huaweicloud.com/python/</code></p>
+    <ol>
+      <li>下载 <b>python-3.11.x-amd64.exe</b>（3.9–3.12 都行，别装最新的 3.13+，部分库还没适配）</li>
+      <li><b>安装界面务必勾选最下方的「Add python.exe to PATH」</b>，再点 Install Now</li>
+      <li>装完按 Win+R 输入 cmd，执行 <code>python --version</code>，能显示版本号即成功</li>
+      <li>装测试常用库（先配国内源加速）：</li>
+    </ol>
+    <pre>pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip install requests pytest allure-pytest</pre>
+    <div class="warn"><b>常见坑：</b>提示「python 不是内部或外部命令」= 没勾 PATH，重新运行安装包选 Modify 补勾，或手动加环境变量。</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">5</span>JMeter（性能测试 / 接口压测，免费开源）</h2>
+    <p class="meta">下载：<code>https://jmeter.apache.org/download_jmeter.cgi</code> ｜ 需要先装 Java（JDK 8 或 11+）</p>
+    <ol>
+      <li>先装 JDK：搜索「Adoptium Temurin JDK 17」下载安装（免费开源版 Java）</li>
+      <li>到 JMeter 官网下载 <b>Binaries 的 .zip 包</b>（不要下源码包）</li>
+      <li>解压到不含中文和空格的路径，如 <code>D:\tools\apache-jmeter-5.6</code></li>
+      <li>进 <code>bin</code> 目录双击 <code>jmeter.bat</code> 启动（会同时弹一个黑色命令行窗口，属正常，别关）</li>
+      <li>界面语言切中文：<code>Options → Choose Language → 中文（简体）</code></li>
+    </ol>
+    <div class="warn"><b>常见坑：</b>启动闪退多半是 Java 没装好或版本不对，命令行执行 <code>java -version</code> 确认；路径含中文会导致各种诡异报错。</div>
+  </div>
+
+  <div class="card">
+    <h2>练手用的免费接口（装完立刻就能测）</h2>
+    <table>
+      <tr><th>地址</th><th>用途</th></tr>
+      <tr><td>https://httpbin.org/get</td><td>最基础的 GET，返回你的请求头信息</td></tr>
+      <tr><td>https://httpbin.org/post</td><td>练 POST 传 JSON / 表单</td></tr>
+      <tr><td>https://httpbin.org/status/404</td><td>练状态码断言</td></tr>
+      <tr><td>https://httpbin.org/delay/3</td><td>练超时设置</td></tr>
+      <tr><td>https://jsonplaceholder.typicode.com/posts</td><td>练增删改查全套（有真实假数据）</td></tr>
+      <tr><td>https://petstore.swagger.io</td><td>带完整文档的示例项目，练读文档写用例</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>验证是否装好（5 分钟自检）</h2>
+    <ol>
+      <li>Apifox 能对 <code>https://httpbin.org/get</code> 发出请求并返回 200</li>
+      <li>Fiddler / Reqable 启动后，浏览器访问任意网页能在列表里看到 https 请求的<b>明文内容</b>（不是 tunnel）</li>
+      <li>命令行 <code>python --version</code> 有输出，<code>pip list</code> 能看到 pytest 和 requests</li>
+      <li>JMeter 能打开图形界面（暂时不用会，能启动就行）</li>
+    </ol>
+  </div>
+</div>
+</body>
+</html>
